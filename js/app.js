@@ -8,6 +8,14 @@
         templateUrl: 'views/main.html',
         controller: 'MainController'
       })
+      .when('/detail:id', {
+        templateUrl: 'views/detail.html',
+        controller: 'DetailController'
+      })
+      .when('/cart', {
+        templateUrl: 'views/template.html',
+        controller: 'CartController'
+      })
       .when('/404', {
         template: '<h2>Page not found</h2>'
       })

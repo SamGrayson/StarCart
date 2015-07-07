@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  margin: 0;
+  padding: 0; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+p, h1, h2, h3, h4, h5, a {
+  margin: 0;
+  padding: 0; }
+
+header {
+  height: 50px;
+  width: 100vw;
+  background-color: white;
+  border-bottom: 2px solid gray;
+  box-shadow: 1px 1px 10px 1px black;
+  position: fixed; }
+  header .headerWrapper {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  header .logo {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 50px;
+    width: 50%;
+    float: left; }
+    header .logo #deathstar {
+      margin-left: 25px; }
+  header .sortButtons {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    height: 50px;
+    width: 200px;
+    margin: 0 auto; }
+    header .sortButtons .sort {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      font-style: italic;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      width: 75px;
+      height: 50px;
+      text-align: center; }
+  header .cartWrap {
+    height: 50px;
+    width: 50%;
+    float: right; }
+    header .cartWrap .cart {
+      float: right;
+      display: flex;
+      margin-top: 6px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row; }
+    header .cartWrap #r2d2 {
+      margin-left: 10px;
+      margin-right: 25px; }
+
+.starWarsBanner {
+  height: 70vh;
+  width: 100vw;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("http://leakynews.s3.amazonaws.com/pub/wp-content/uploads/2012/10/star-wars-episode-4-advance-poster.jpg");
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.listWrap {
+  height: 100%;
+  width: 95%;
+  margin: 35px auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.individualPosts {
+  height: 300px;
+  width: 30%;
+  margin: 10px;
+  border: 2px solid lightgray; }
+  .individualPosts .image {
+    height: 70%;
+    width: 100%; }
+    .individualPosts .image img {
+      width: 100%;
+      height: 100%; }
+  .individualPosts .bottom {
+    height: 25%;
+    width: 100%;
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif; }
+    .individualPosts .bottom .title {
+      height: 50%;
+      width: 100%;
+      overflow: hidden; }
+      .individualPosts .bottom .title h3 {
+        padding: 10px;
+        font-weight: 400; }
+    .individualPosts .bottom .price {
+      height: 50%;
+      width: 100%;
+      text-align: right; }
+      .individualPosts .bottom .price p {
+        padding: 10px;
+        font-weight: 300; }
+
+/*# sourceMappingURL=style.css.map */
