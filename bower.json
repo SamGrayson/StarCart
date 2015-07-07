@@ -1,0 +1,22 @@
+{
+  "name": "starcart",
+  "version": "0.0.0",
+  "homepage": "https://github.com/SamGrayson/StarCart",
+  "authors": [
+    "Sam Grayson <samuel.c.grayson17@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.2",
+    "fontawesome": "~4.3.0",
+    "moment": "~2.10.3",
+    "underscore": "~1.8.3"
+  }
+}
