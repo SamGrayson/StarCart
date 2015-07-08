@@ -10,7 +10,7 @@
       })
       .when('/detail:id', {
         templateUrl: 'views/detail.html',
-        controller: 'DetailController'
+        controller: 'MainController'
       })
       .when('/cart', {
         templateUrl: 'views/template.html',

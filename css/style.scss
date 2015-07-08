@@ -24,6 +24,8 @@ header {
   border-bottom: 2px solid gray;
   box-shadow: 1px 1px 10px 1px black;
   position: fixed;
+  background-color: white;
+  z-index: 2;
 
 .headerWrapper {
   height: 50px;
@@ -143,9 +145,10 @@ header {
   width: 100vw;
   background: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2)),
               url('http://leakynews.s3.amazonaws.com/pub/wp-content/uploads/2012/10/star-wars-episode-4-advance-poster.jpg');
-  background-position: 50% 40%;
+  background-position: 50% 30%;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 25px;
 }
 
 
@@ -156,7 +159,7 @@ header {
 .listWrap {
   height: 100%;
   width: 95%;
-  margin: 35px auto;
+  margin: 0 auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -175,7 +178,7 @@ header {
 }
 
 .individualPosts {
-  height: 300px;
+  height: 60vh;
   width: 30%;
   margin: 10px;
   border: 2px solid lightgray;
@@ -188,10 +191,11 @@ header {
     }
   }
   .bottom{
-    height: 25%;
+    height: 30%;
     width: 100%;
     margin-top: 10px;
     font-family: 'Open Sans', sans-serif;
+    position: relative;
     .title {
       height: 50%;
       width:100%;
@@ -205,10 +209,139 @@ header {
       height: 50%;
       width: 100%;
       text-align: right;
+      #etsyLink {
+        font-style: italic;
+        font-size: .7em;
+        float: left;
+        position: absolute;
+          bottom: 35px;
+        left: 10px;
+        color: rgb(217, 184, 13);
+      }
       p {
         padding: 10px;
         font-weight: 300;
       }
     }
   }
+}
+
+///////////////////////////////
+///        Product          //
+/////////////////////////////
+
+.productWrap {
+  height: 100%;
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 12vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;-ms-flex-wrap: wrap;flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;-webkit-align-items: center;-ms-flex-align: center;align-items: center;
+}
+
+.individualPost {
+  height: 80vh;
+  width: 40%;
+  margin: 10px;
+  border: 2px solid lightgray;
+  .image {
+    height: 70%;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .bottom{
+    height: 30%;
+    width: 100%;
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    .title {
+      height: 50%;
+      width:100%;
+      overflow: hidden;
+      h3 {
+        padding: 10px;
+        font-weight: 400;
+      }
+    }
+    .price {
+      height: 50%;
+      width: 100%;
+      text-align: right;
+      #etsyLinkProd {
+        font-style: italic;
+        font-size: .7em;
+        float: left;
+        position: absolute;
+          bottom: 55px;
+        left: 10px;
+        color: rgb(217, 184, 13);
+      }
+      p {
+        padding: 10px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.descriptionWrap {
+  height: 60vh;
+  float: right;
+  width: 55%;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-bottom: 50px;
+  margin-bottom: 100px;
+  font-family: 'Open Sans', sans-serif;
+
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 4em;
+      font-weight: 300;
+      border-bottom: 2px solid lightgray;
+    }
+}
+
+.description {
+  height: 80%;
+  width: 100%;
+  padding-bottom: 35px;
+  font-family: 'Open Sans', sans-serif;
+  overflow: scroll;
+
+  h2 {
+    font-weight: 400;
+  }
+}
+
+.addCart {
+  width: 100%;
+  height: 20%;
+  margin-top: 25px;
+  background-color: rgba(15, 143, 47, 0.89);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: white;
 }

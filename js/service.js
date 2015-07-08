@@ -32,9 +32,20 @@
         return $http.jsonp(bldUrl(linkObj))
       }
 
+      var getProduct = function(id) {
+        return $http.jsonp(bldUrl(linkObj)).then(function (list) {
+          var narrowedDownArr = _.where(list.data.results, {listing_id: Number(id)});
+          console.log(narrowedDownArr);
+          return mapData(narrowedDownArr)[0];
+        });
+      }
+
       return {
         getData : getData,
-        mapData : mapData
+        mapData : mapData,
+        getProduct : getProduct
       }
+
+
     })
 })();

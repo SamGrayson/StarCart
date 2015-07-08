@@ -1,11 +1,11 @@
 <div class="listWrap" ng-controller="MainController">
   <div class="individualPosts" ng-repeat="lists in list">
     <div class="image">
-      <a href={{lists.url}}><img src={{lists.img}} alt=""></a>
+      <a href='/#/detail{{lists.id}}'><img src={{lists.img}} alt=""></a>
     </div>
     <div class="bottom">
       <div class="title"><h3>{{lists.title}}</h3></div>
-      <div class="price"><p>Price: {{lists.price}}</p></div>
+      <div class="price"><span id="etsyLink"><a href={{lists.url}}>View on Etsy</a></span><p>Price: {{lists.price}}</p></div>
     </div>
   </div>
 </div>
