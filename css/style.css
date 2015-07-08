@@ -16,6 +16,23 @@ p, h1, h2, h3, h4, h5, a {
   margin: 0;
   padding: 0; }
 
+.titleLogo {
+  position: relative;
+  height: 20vh;
+  width: 100vw;
+  z-index: 4;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: white; }
+  .titleLogo #deathstarSmall {
+    height: 75px;
+    width: 75px; }
+  .titleLogo #starCartLogoSmall {
+    height: 75px;
+    width: 300px; }
+
 header {
   height: 50px;
   width: 100vw;
@@ -54,6 +71,7 @@ header {
       width: 40px;
       margin-left: 25px; }
     header .logo #starCartLogo {
+      display: inline-block;
       height: 40px;
       width: 250px; }
   header .sortButtons {
@@ -449,5 +467,27 @@ input {
 
   .description h2 {
     font-size: 1.0em; } }
+@media screen and (max-width: 700px) {
+  .titleLogo {
+    display: flex; }
+
+  header .logo {
+    width: 20%; }
+
+  header .logo #starCartLogo {
+    transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    height: 30px;
+    width: 150px;
+    display: none; }
+
+  input {
+    width: 200px; }
+
+  header .sortButtons {
+    width: 300px; }
+
+  .starWarsBanner {
+    height: 50vh; } }
 
 /*# sourceMappingURL=style.css.map */
