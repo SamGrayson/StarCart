@@ -57,8 +57,8 @@
           console.log(err);
         });
       };
-      var deleteFromCart = function(productId) {
-        var deleteUrl = url + '/' + productId;
+      var deleteFromCart = function(product) {
+        var deleteUrl = url + '/' + product;
         $http.delete(deleteUrl).success(function (resp) {
             console.log(resp);
           }).error(function (err) {
