@@ -58,7 +58,13 @@ header {
   float:left;
 
   #deathstar {
+    height: 40px;
+    width: 40px;
     margin-left: 25px;
+  }
+  #starCartLogo {
+    height: 40px;
+    width: 250px;
   }
 }
 
@@ -470,4 +476,53 @@ input {
   top: 5px;
   color: rgba(255, 0, 0, 1);
   cursor: pointer;
+}
+
+////////////////////////////
+//        Webkits        //
+//////////////////////////
+
+@media screen and (max-width: 980px) {
+  header .cartWrap {
+      transition: all .25s ease;
+      -webkit-transition: all .25s ease;
+      width: 20%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  header .cartWrap {
+      transition: all .25s ease;
+      -webkit-transition: all .25s ease;
+      width: 30%;
+  }
+  header .logo #deathstar {
+    transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    height: 30px;
+    width: 30px;
+  }
+  header .logo #starCartLogo {
+    transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    height: 30px;
+    width: 150px;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+
+  .individualPosts {
+    width: 45%;
+  }
+
+  .addCart {
+    font-size: 1.5em;
+  }
+
+  .description h2 {
+    font-size: 1.0em;
+  }
+
 }
