@@ -23,7 +23,7 @@
 <div class="listWrap">
   <div class="individualPosts" ng-repeat="lists in list | filter:search:strict | orderBy:order"> <!-- | orderBy:'title' -->
     <div class="image">
-      <a href='/#/detail{{lists.id}}'><img ng-src={{lists.img}} alt=""></a>
+      <a href='#/detail{{lists.id}}'><img ng-src={{lists.img}} alt=""></a>
     </div>
     <div class="bottom">
       <div class="title"><h3>{{lists.title}}</h3></div>
