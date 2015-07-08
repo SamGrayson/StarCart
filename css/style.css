@@ -279,6 +279,10 @@ header {
   .description h2 {
     font-weight: 400; }
 
+.mats {
+  margin-top: 25px;
+  margin-bottom: 15px; }
+
 .description::-webkit-scrollbar {
   display: none; }
 

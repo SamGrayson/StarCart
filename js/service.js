@@ -48,4 +48,38 @@
 
 
     })
+    .factory('CartService', function ($http) {
+      var url = 'http://tiy-fee-rest.herokuapp.com/collections/StarCart1';
+      var addToCart = function (product) {
+      $http.post(url, product).success(function (resp) {
+          console.log(resp);
+        }).error(function (err) {
+          console.log(err);
+        });
+      };
+      var deleteFromCart = function(productId) {
+        var deleteUrl = url + '/' + productId;
+        $http.delete(deleteUrl).success(function (resp) {
+            console.log(resp);
+          }).error(function (err) {
+            console.log(err);
+          });
+      };
+      var getCart = function () {
+        return $http.get(url);
+      };
+
+      var getCartLength = function() {
+        $http.get(url).success(function(cart) {
+          return cart.length;
+        })
+      };
+
+      return {
+        addToCart: addToCart,
+        deleteFromCart: deleteFromCart,
+        getCart: getCart,
+        getCartLength: getCartLength
+      };
+    })
 })();
