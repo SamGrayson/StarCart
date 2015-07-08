@@ -1,0 +1,24 @@
+<header>
+  <div class="headerWrapper" ng-controller="MainController">
+    <div class="logo">
+      <a href='/#/'><img id="deathstar" src="deathstarLogo.jpg" style="height: 40px; width: 40px" alt=""><img src="starcart.png" style="height: 40px; width: 250px" alt=""></a>
+    </div>
+    <div class="cartWrap">
+      <a id="cartButton" href='/#/cart'><div class="cart"> cart: {{cart.length}}<img id="r2d2" src="r2d2.png" style="height: 40px; width: 30px" alt=""><div class="r2d2shadow"></div></img></div></a>
+    </div>
+  </div>
+</header>
+
+<div class="cartListWrap" ng-controller="MainController">
+  <div class="individualPosts" ng-repeat="carts in cart">
+    <div class="image">
+      <i ng-click='deleteFromCart(carts._id)' id={{carts.id}} class="fa fa-times"></i>
+      <a href='/#/detail{{carts.id}}'><img src={{carts.img}} alt=""></a>
+    </div>
+    <div class="bottom">
+      <div class="title"><h3>{{carts.title}}</h3></div>
+      <div class="price"><span id="etsyLink"><a href={{carts.url}}>View on Etsy</a></span><p>Price: {{carts.price}}</p></div>
+    </div>
+  </div>
+</div>
+<div class="priceTotal">Total Price: {{ getTotalPrice() | currency }}</div>

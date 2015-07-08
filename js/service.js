@@ -32,9 +32,54 @@
         return $http.jsonp(bldUrl(linkObj))
       }
 
+      var getProduct = function(id) {
+        return $http.jsonp(bldUrl(linkObj)).then(function (list) {
+          var narrowedDownArr = _.where(list.data.results, {listing_id: Number(id)});
+          console.log(narrowedDownArr);
+          return mapData(narrowedDownArr)[0];
+        });
+      }
+
       return {
         getData : getData,
-        mapData : mapData
+        mapData : mapData,
+        getProduct : getProduct
       }
+
+
+    })
+    .factory('CartService', function ($http) {
+      var url = 'http://tiy-fee-rest.herokuapp.com/collections/StarCart1';
+      var addToCart = function (product) {
+      $http.post(url, product).success(function (resp) {
+          console.log(resp);
+        }).error(function (err) {
+          console.log(err);
+        });
+      };
+      var deleteFromCart = function(product) {
+        var deleteUrl = url + '/' + product;
+        $http.delete(deleteUrl).success(function (resp) {
+            console.log(resp);
+          }).error(function (err) {
+            console.log(err);
+          });
+      };
+      var getCart = function () {
+        return $http.get(url);
+      };
+
+      var getCartLength = function() {
+        $http.get(url).success(function(cart) {
+          return cart.length;
+        })
+      };
+
+      return {
+        addToCart: addToCart,
+        deleteFromCart: deleteFromCart,
+        getCart: getCart,
+        getCartLength: getCartLength
+      };
     })
 })();
