@@ -420,7 +420,7 @@ input {
 }
 
 .priceTotal {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   height: 150px;
   width: 100vw;
@@ -448,7 +448,7 @@ input {
   position: absolute;
   right: 5px;
   top: 5px;
-  color: rgba(255, 255, 255, 0.51);
+  color: rgba(255, 0, 0, 0.5);
 }
 
 .fa-times:hover {
@@ -457,6 +457,6 @@ input {
   position: absolute;
   right: 5px;
   top: 5px;
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255, 0, 0, 1);
   cursor: pointer;
 }

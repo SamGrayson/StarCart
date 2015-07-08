@@ -31,7 +31,19 @@
       }
 
       var getData = function() {
-        return $http.jsonp(bldUrl(linkObj))
+        var deferred = $q.defer();
+        var cache = cacheEngine.get('starCart');
+        if(cache) {
+          console.log('we are in the cache');
+          deferred.resolve(cache);
+        } else {
+          $http.jsonp(bldUrl(linkObj)).then(function(list){
+            cacheEngine.put('starCart', mapData(list.data.results));
+            console.log('we are in the http method')
+               deferred.resolve(mapData(list.data.results));
+          })
+        }
+        return deferred.promise
       }
 
       var getProduct = function(id) {

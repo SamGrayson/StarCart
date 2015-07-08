@@ -366,7 +366,7 @@ input {
   right: 34px; }
 
 .priceTotal {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   height: 150px;
   width: 100vw;
@@ -393,7 +393,7 @@ input {
   position: absolute;
   right: 5px;
   top: 5px;
-  color: rgba(255, 255, 255, 0.51); }
+  color: rgba(255, 0, 0, 0.5); }
 
 .fa-times:hover {
   transition: all .25s linear;
@@ -401,7 +401,7 @@ input {
   position: absolute;
   right: 5px;
   top: 5px;
-  color: white;
+  color: red;
   cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

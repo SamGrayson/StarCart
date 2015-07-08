@@ -13,7 +13,7 @@
   <div class="individualPosts" ng-repeat="carts in cart">
     <div class="image">
       <i ng-click='deleteFromCart(carts._id)' id={{carts.id}} class="fa fa-times"></i>
-      <a href='/#/detail{{carts.id}}'><img src={{carts.img}} alt=""></a>
+      <a href='/#/detail{{carts.id}}'><img ng-src={{carts.img}} alt=""></a>
     </div>
     <div class="bottom">
       <div class="title"><h3>{{carts.title}}</h3></div>
