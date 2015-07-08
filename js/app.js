@@ -1,7 +1,10 @@
 (function() {
   'use strict';
   angular
-    .module('starCart', ['ngRoute'])
+    .module('starCart', [
+      'ngRoute',
+      'cart'
+      ])
     .config(function($routeProvider){
       $routeProvider
       .when('/', {
@@ -10,10 +13,6 @@
       })
       .when('/detail:id', {
         templateUrl: 'views/detail.html',
-        controller: 'MainController'
-      })
-      .when('/cart', {
-        templateUrl: 'views/cart.html',
         controller: 'MainController'
       })
       .when('/404', {

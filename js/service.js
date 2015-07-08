@@ -4,7 +4,13 @@
     .module('starCart')
     .factory('ListService', function($http, $cacheFactory, $q) {
 
-      var cacheEngine = $cacheFactory('AwesomePhotos');
+      var cacheEngine = $cacheFactory('StarCartData');
+
+      var cleanCharacters = function(html) {
+       var txt = document.createElement("textarea");
+       txt.innerHTML = html;
+       return txt.value;
+     };
 
       var linkObj = {
         baseUrl: 'https://openapi.etsy.com/v2/listings/active.js?includes=MainImage&',
@@ -20,9 +26,9 @@
         return _.map(collection, function(obj){
           return {
             img: obj.MainImage.url_fullxfull,
-            title: obj.title,
+            title: cleanCharacters(obj.title),
             id: obj.listing_id,
-            descript: obj.description,
+            descript: cleanCharacters(obj.description),
             url: obj.url,
             materials: obj.materials,
             price: obj.price
@@ -47,11 +53,19 @@
       }
 
       var getProduct = function(id) {
-        return $http.jsonp(bldUrl(linkObj)).then(function (list) {
-          var narrowedDownArr = _.where(list.data.results, {listing_id: Number(id)});
-          console.log(narrowedDownArr);
-          return mapData(narrowedDownArr)[0];
-        });
+          var deferred = $q.defer();
+          var cache = cacheEngine.get('product');
+          if(cache) {
+            console.log('we are in the cache');
+            deferred.resolve(cache);
+          } else {
+            $http.jsonp(bldUrl(linkObj)).then(function (list) {
+              var narrowedDownArr = _.where(list.data.results, {listing_id: Number(id)});
+              console.log('we are in the http method')
+              deferred.resolve(mapData(narrowedDownArr)[0]);
+            })
+          }
+            return deferred.promise
       }
 
       return {
@@ -61,39 +75,5 @@
       }
 
 
-    })
-    .factory('CartService', function ($http) {
-      var url = 'http://tiy-fee-rest.herokuapp.com/collections/StarCart1';
-      var addToCart = function (product) {
-      $http.post(url, product).success(function (resp) {
-          console.log(resp);
-        }).error(function (err) {
-          console.log(err);
-        });
-      };
-      var deleteFromCart = function(product) {
-        var deleteUrl = url + '/' + product;
-        $http.delete(deleteUrl).success(function (resp) {
-            console.log(resp);
-          }).error(function (err) {
-            console.log(err);
-          });
-      };
-      var getCart = function () {
-        return $http.get(url);
-      };
-
-      var getCartLength = function() {
-        $http.get(url).success(function(cart) {
-          return cart.length;
-        })
-      };
-
-      return {
-        addToCart: addToCart,
-        deleteFromCart: deleteFromCart,
-        getCart: getCart,
-        getCartLength: getCartLength
-      };
     })
 })();

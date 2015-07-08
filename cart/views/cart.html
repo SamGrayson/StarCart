@@ -1,5 +1,5 @@
 <header>
-  <div class="headerWrapper" ng-controller="MainController">
+  <div class="headerWrapper" ng-controller="CartController">
     <div class="logo">
       <a href='/#/'><img id="deathstar" src="deathstarLogo.jpg" style="height: 40px; width: 40px" alt=""><img src="starcart.png" style="height: 40px; width: 250px" alt=""></a>
     </div>
@@ -9,11 +9,11 @@
   </div>
 </header>
 
-<div class="cartListWrap" ng-controller="MainController">
+<div class="cartListWrap" ng-controller="CartController">
   <div class="individualPosts" ng-repeat="carts in cart">
     <div class="image">
       <i ng-click='deleteFromCart(carts._id)' id={{carts.id}} class="fa fa-times"></i>
-      <a href='/#/detail{{carts.id}}'><img ng-src={{carts.img}} alt=""></a>
+        <img ng-src={{carts.img}} alt="">
     </div>
     <div class="bottom">
       <div class="title"><h3>{{carts.title}}</h3></div>

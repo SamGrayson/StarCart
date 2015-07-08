@@ -4,7 +4,7 @@
       <a href='/#/'><img id="deathstar" src="deathstarLogo.jpg" style="height: 40px; width: 40px" alt=""><img src="starcart.png" style="height: 40px; width: 250px" alt=""></a>
     </div>
     <div class="cartWrap">
-      <a id="cartButton" href='/#/cart'><div class="cart"> cart: {{cart.length}}<img id="r2d2" src="r2d2.png" style="height: 40px; width: 30px" alt=""><div class="r2d2shadow"></div></img></div></a>
+      <a id="cartButton" href='/#/cart'><div class="cart" ng-controller="CartController"> cart: {{cart.length}}<img id="r2d2" src="r2d2.png" style="height: 40px; width: 30px" alt=""><div class="r2d2shadow"></div></img></div></a>
     </div>
   </div>
 </header>
@@ -26,7 +26,7 @@
       <div class="mats"><u><b>Materials</u></b></div>
       <h2 ng-repeat='materials in product.materials'>{{materials}}</h2>
     </div>
-    <div class="addCart" ng-click="addToCart(product)">
+    <div class="addCart" ng-controller="CartController" ng-click="addToCart(product)">
       ADD TO CART YOUNG JEDI
     </div>
   </div>
