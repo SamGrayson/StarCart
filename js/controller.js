@@ -3,34 +3,16 @@
   angular
     .module('starCart')
     .controller('MainController', function($scope, ListService, CartService, $routeParams){
-      
-      ListService.getData().success(function(list) {
-        $scope.list = ListService.mapData(list.results)
+
+      ListService.getData().then(function(list) {
+        $scope.list = list
+        console.log(list)
       })
 
-      ListService.getProduct($routeParams.id).then(function(product){
-        $scope.product = product
-      })
-
-      CartService.getCart().success(function (cart) {
-        $scope.cart = cart;
-        console.log(cart);
-      });
-
-      $scope.getTotalPrice = function() {
-        var total = 0;
-        _.each($scope.cart, function(el, idx) {
-          total += Number($scope.cart[idx].price);
-        });
-        return total;
+      $scope.setOrder = function (order) {
+          $scope.order = order;
+          console.log($scope.order);
       };
 
-      $scope.addToCart = function (product) {
-        CartService.addToCart(product);
-      };
-
-      $scope.deleteFromCart = function (productId) {
-        CartService.deleteFromCart(productId);
-      };
     });
 })();

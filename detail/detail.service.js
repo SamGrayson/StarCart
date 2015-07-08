@@ -1,10 +1,10 @@
 (function() {
   'use strict';
   angular
-    .module('starCart')
-    .factory('ListService', function($http, $cacheFactory, $q) {
+    .module('detail')
+    .factory('DetailService', function($http, $cacheFactory, $q) {
 
-      var cacheEngine = $cacheFactory('StarCartData');
+      var cacheEngine = $cacheFactory('StarCartDetail');
 
       var cleanCharacters = function(html) {
        var txt = document.createElement("textarea");
@@ -31,25 +31,9 @@
             descript: cleanCharacters(obj.description),
             url: obj.url,
             materials: obj.materials,
-            price: +obj.price
+            price: obj.price
           }
         });
-      }
-
-      var getData = function() {
-        var deferred = $q.defer();
-        var cache = cacheEngine.get('starCart');
-        if(cache) {
-          console.log('we are in the cache');
-          deferred.resolve(cache);
-        } else {
-          $http.jsonp(bldUrl(linkObj)).then(function(list){
-            cacheEngine.put('starCart', mapData(list.data.results));
-            console.log('we are in the http method')
-               deferred.resolve(mapData(list.data.results));
-          })
-        }
-        return deferred.promise
       }
 
       var getProduct = function(id) {
@@ -69,11 +53,8 @@
       }
 
       return {
-        getData : getData,
-        mapData : mapData,
         getProduct : getProduct
       }
 
-
-    })
-})();
+     })
+ })();
