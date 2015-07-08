@@ -4,6 +4,7 @@
     .module('cart')
     .factory('CartService', function ($http) {
       var url = 'http://tiy-fee-rest.herokuapp.com/collections/StarCart1';
+      
       var addToCart = function (product) {
       $http.post(url, product).success(function (resp) {
           console.log(resp);

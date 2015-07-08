@@ -3,16 +3,13 @@
   angular
     .module('starCart', [
       'ngRoute',
-      'cart'
+      'cart',
+      'detail'
       ])
     .config(function($routeProvider){
       $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainController'
-      })
-      .when('/detail:id', {
-        templateUrl: 'views/detail.html',
         controller: 'MainController'
       })
       .when('/404', {

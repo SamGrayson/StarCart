@@ -8,8 +8,5 @@
         $scope.list = list
       })
 
-      ListService.getProduct($routeParams.id).then(function(product){
-        $scope.product = product
-      })
     });
 })();
