@@ -6,7 +6,6 @@
 
         CartService.getCart().success(function (cart) {
           $scope.cart = cart;
-          console.log(cart);
         });
 
         $scope.getTotalPrice = function() {
@@ -25,10 +24,14 @@
           CartService.deleteFromCart(productId);
         };
 
-        $scope.setOrder = function (order) {
-            $scope.order = order;
-            console.log($scope.order);
+        var watchCallback = function () {
+          CartService.getCart().success(function (cart) {
+           $scope.cart = cart;
+          });
         };
+
+        $scope.$on('item:created', watchCallback);
+        $scope.$on('item:deleted', watchCallback);
 
     });
 })();

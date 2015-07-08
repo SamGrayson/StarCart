@@ -1,13 +1,14 @@
+<div ng-controller="MainController">
 <header>
-  <div class="headerWrapper" ng-controller="MainController">
+  <div class="headerWrapper" >
     <div class="logo">
       <a href='/#/'><img id="deathstar" src="deathstarLogo.jpg" style="height: 40px; width: 40px" alt=""><img src="starcart.png" style="height: 40px; width: 250px" alt=""></a>
     </div>
     <div class="sortButtons">
-      <input type="text"></input>
+      <input type="text" ng-model='search.title'>
       <div class="sort title" ng-class="{'active': order=='title'}" ng-click="setOrder('title')">Title</div>
       |
-      <div class="sort price">Price</div>
+      <div class="sort price" ng-class="{'active': order=='price'}" ng-click="setOrder('price')">Price</div>
     </div>
     <div class="cartWrap">
       <a id="cartButton" href='/#/cart'><div class="cart" ng-controller="CartController"> cart: {{cart.length}}<img id="r2d2" src="r2d2.png" style="height: 40px; width: 30px" alt=""><div class="r2d2shadow"></div></img></div></a>
@@ -19,14 +20,15 @@
 </div>
 
 
-<div class="listWrap" ng-controller="MainController">
-  <div class="individualPosts" ng-repeat="lists in list | orderBy:order"> <!-- | orderBy:'title' -->
+<div class="listWrap">
+  <div class="individualPosts" ng-repeat="lists in list | filter:search:strict | orderBy:order"> <!-- | orderBy:'title' -->
     <div class="image">
       <a href='/#/detail{{lists.id}}'><img ng-src={{lists.img}} alt=""></a>
     </div>
     <div class="bottom">
       <div class="title"><h3>{{lists.title}}</h3></div>
-      <div class="price"><span id="etsyLink"><a href={{lists.url}}>View on Etsy</a></span><p>Price: {{lists.price}}</p></div>
+      <div class="price"><span id="etsyLink"><a href={{lists.url}}>View on Etsy</a></span><p>Price: {{lists.price | currency}}</p></div>
     </div>
   </div>
+</div>
 </div>

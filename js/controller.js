@@ -6,7 +6,13 @@
 
       ListService.getData().then(function(list) {
         $scope.list = list
+        console.log(list)
       })
+
+      $scope.setOrder = function (order) {
+          $scope.order = order;
+          console.log($scope.order);
+      };
 
     });
 })();

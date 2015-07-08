@@ -101,8 +101,18 @@ header {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     width: 75px;
-    height: 50px;
+    height: 45px;
     text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: all .25s linear;
+    -webkit-transition: all .25s linear;
+  }
+
+  .sort:hover {
+    color:white;
+    background-color: lightgray;
+    cursor: pointer;
   }
 }
 

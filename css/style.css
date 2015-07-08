@@ -89,8 +89,16 @@ header {
       font-family: 'Open Sans', sans-serif;
       font-weight: 700;
       width: 75px;
-      height: 50px;
-      text-align: center; }
+      height: 45px;
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+      transition: all .25s linear;
+      -webkit-transition: all .25s linear; }
+    header .sortButtons .sort:hover {
+      color: white;
+      background-color: lightgray;
+      cursor: pointer; }
   header .cartWrap {
     position: relative;
     height: 50px;

@@ -31,7 +31,7 @@
             descript: cleanCharacters(obj.description),
             url: obj.url,
             materials: obj.materials,
-            price: obj.price
+            price: +obj.price
           }
         });
       }
