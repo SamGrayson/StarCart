@@ -2,7 +2,9 @@
   'use strict';
   angular
     .module('starCart')
-    .factory('ListService', function($http) {
+    .factory('ListService', function($http, $cacheFactory, $q) {
+
+      var cacheEngine = $cacheFactory('AwesomePhotos');
 
       var linkObj = {
         baseUrl: 'https://openapi.etsy.com/v2/listings/active.js?includes=MainImage&',

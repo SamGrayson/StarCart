@@ -81,7 +81,7 @@ header {
   -ms-flex-direction: row;
           flex-direction: row;
   height: 50px;
-  width: 200px;
+  width: 500px;
   margin: 0 auto;
 
   .sort {
@@ -140,6 +140,11 @@ header {
 
 }
 
+input {
+   width: 300px;
+   height: 25px;
+}
+
 ///////////////////////////////
 ///    Star Wars Banner     //
 /////////////////////////////
@@ -193,11 +198,12 @@ header {
   -webkit-box-pack: start;-webkit-justify-content: flex-start;-ms-flex-pack: start;justify-content: flex-start;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;-webkit-align-items: center;-ms-flex-align: center;align-items: center;
   padding-bottom: 50px;
+    padding-top: 100px;
 }
 
 .individualPosts {

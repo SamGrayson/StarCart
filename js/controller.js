@@ -3,7 +3,7 @@
   angular
     .module('starCart')
     .controller('MainController', function($scope, ListService, CartService, $routeParams){
-      
+
       ListService.getData().success(function(list) {
         $scope.list = ListService.mapData(list.results)
       })
@@ -31,6 +31,11 @@
 
       $scope.deleteFromCart = function (productId) {
         CartService.deleteFromCart(productId);
+      };
+
+      $scope.setOrder = function (order) {
+          $scope.order = order;
+          console.log($scope.order);
       };
     });
 })();
