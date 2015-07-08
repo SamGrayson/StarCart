@@ -129,7 +129,8 @@ header {
 
 input {
   width: 300px;
-  height: 25px; }
+  height: 25px;
+  padding-left: 10px; }
 
 .starWarsBanner {
   height: 70vh;
