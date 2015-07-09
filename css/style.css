@@ -612,6 +612,8 @@ input {
     bottom: 22px; }
 
   .priceTotal {
-    font-size: 2em; } }
+    font-size: 2em;
+    background-color: white;
+    z-index: 2; } }
 
 /*# sourceMappingURL=style.css.map */
