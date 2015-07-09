@@ -637,7 +637,7 @@ input {
   }
 }
 
-@media handheld, screen and (max-width: 320px) {
+@media handheld, screen and (max-width: 375px) {
   .individualPost {
     width: 90%;
     height: 80vh;
