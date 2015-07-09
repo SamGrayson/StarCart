@@ -438,12 +438,12 @@ input {
   color: red;
   cursor: pointer; }
 
-@media screen and (max-width: 980px) {
+@media handheld, screen and (max-width: 980px) {
   header .cartWrap {
     transition: all .25s ease;
     -webkit-transition: all .25s ease;
     width: 20%; } }
-@media screen and (max-width: 850px) {
+@media handheld, screen and (max-width: 850px) {
   header .cartWrap {
     transition: all .25s ease;
     -webkit-transition: all .25s ease;
@@ -460,7 +460,7 @@ input {
     -webkit-transition: all .25s ease;
     height: 30px;
     width: 150px; } }
-@media screen and (max-width: 800px) {
+@media handheld, screen and (max-width: 800px) {
   .individualPosts {
     width: 45%; }
 
@@ -475,7 +475,7 @@ input {
 
   .individualPost .bottom .price #etsyLinkProd {
     bottom: 35px; } }
-@media screen and (max-width: 700px) {
+@media handheld, screen and (max-width: 700px) {
   .titleLogo {
     display: flex; }
 
@@ -530,8 +530,60 @@ input {
 
   .r2d2shadow {
     right: 14px; } }
-@media screen and (max-width: 415px) {
+@media handheld, screen and (max-width: 415px) {
   .individualPost {
     width: 80%; } }
+@media handheld, screen and (max-width: 320px) {
+  .individualPost {
+    width: 90%;
+    height: 80vh; }
+
+  .individualPosts {
+    width: 90%;
+    height: 80vh; }
+
+  header .cartWrap {
+    transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    width: 40%;
+    margin-right: 0px; }
+
+  .descriptionWrap h1 {
+    margin-bottom: 40px;
+    font-size: 3em; }
+
+  .addCart {
+    font-size: 1.2em; }
+
+  .titleLogo #starCartLogoSmall {
+    height: 50px;
+    width: 250px; }
+
+  .titleLogo #deathstarSmall {
+    height: 50px;
+    width: 50px; }
+
+  header .sortButtons .sort {
+    display: none; }
+
+  header .sortButtons {
+    width: 100px; }
+
+  .cartListWrap {
+    height: 85%;
+    width: 95%;
+    overflow: scroll;
+    padding-top: 80px; }
+
+  .cartListWrap::-webkit-scrollbar {
+    display: none; }
+
+  .cartListWrap .individualPosts {
+    width: 100%;
+    height: 60vh;
+    margin: 0; }
+
+  .individualPosts .bottom .price #etsyLink {
+    bottom: 22px; } }
 
 /*# sourceMappingURL=style.css.map */
