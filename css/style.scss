@@ -155,7 +155,7 @@ header {
 
   .cart {
     float: right;
-    display: flex;
+    display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;
     margin-top: 6px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
@@ -420,9 +420,18 @@ input {
   background: linear-gradient(265deg, rgba(15, 143, 47, 1),rgba(15, 143, 47, 1));
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+          align-items: center;
   font-size: 2em;
   color: white;
   transition: all .25s linear;
@@ -562,7 +571,7 @@ input {
 @media handheld, screen and (max-width: 700px) {
 
   .titleLogo {
-    display: flex
+    display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex
   }
 
   header .logo #deathstar {

@@ -131,6 +131,9 @@ header {
     float: right; }
     header .cartWrap .cart {
       float: right;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
       margin-top: 6px;
       font-family: 'Open Sans', sans-serif;
@@ -363,8 +366,17 @@ input {
   background: linear-gradient(265deg, #0f8f2f, #0f8f2f);
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   font-size: 2em;
   color: white;
@@ -477,6 +489,9 @@ input {
     bottom: 35px; } }
 @media handheld, screen and (max-width: 700px) {
   .titleLogo {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex; }
 
   header .logo #deathstar {
