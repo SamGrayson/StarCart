@@ -1,4 +1,5 @@
 <div ng-controller="MainController">
+
 <header>
   <div class="headerWrapper" >
     <div class="logo">
@@ -16,6 +17,10 @@
   </div>
 </header>
 
+<div class="titleLogo hidden">
+  <a href='#/'><img id="deathstarSmall" src="deathstarLogo.jpg" alt=""><img id="starCartLogoSmall" src="starcart.png" alt=""></a>
+</div>
+
 <div class="starWarsBanner">
 </div>
 
@@ -23,7 +28,7 @@
 <div class="listWrap">
   <div class="individualPosts" ng-repeat="lists in list | filter:search:strict | orderBy:order"> <!-- | orderBy:'title' -->
     <div class="image">
-      <a href='#/detail{{lists.id}}'><img ng-src={{lists.img}} alt=""></a>
+      <a href='#/detail{{lists.id}}'><img ng-src={{lists.img}} alt="" fallback-src></a>
     </div>
     <div class="bottom">
       <div class="title"><h3>{{lists.title}}</h3></div>

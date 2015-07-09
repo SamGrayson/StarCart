@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  transition: all .25s ease;
+  -webkit-transition: all .25s ease;
 }
 
 html {
@@ -18,6 +20,28 @@ body {
 p, h1, h2, h3, h4, h5, a {
   margin: 0;
   padding: 0;
+}
+
+.titleLogo {
+  position: relative;
+  height: 20vh;
+  width: 100vw;
+  z-index: 4;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: white;
+
+  #deathstarSmall {
+    height: 75px;
+    width: 75px;
+  }
+
+  #starCartLogoSmall {
+    height: 75px;
+    width: 300px;
+  }
 }
 
 header {
@@ -63,6 +87,7 @@ header {
     margin-left: 25px;
   }
   #starCartLogo {
+    display: inline-block;
     height: 40px;
     width: 250px;
   }
@@ -508,7 +533,6 @@ input {
     height: 30px;
     width: 150px;
   }
-
 }
 
 @media screen and (max-width: 800px) {
@@ -525,4 +549,90 @@ input {
     font-size: 1.0em;
   }
 
+  .individualPost {
+    height: 60vh;
+  }
+
+  .individualPost .bottom .price #etsyLinkProd {
+    bottom: 35px;
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+
+  .titleLogo {
+    display: flex
+  }
+
+  header .logo #deathstar {
+    transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    height: 50px;
+    width: 50px;
+  }
+
+  header .logo {
+    width: 20%;
+  }
+
+  header .logo #starCartLogo {
+    transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    height: 30px;
+    width: 150px;
+    display: none;
+  }
+
+  input {
+    width: 200px;
+  }
+
+  header .sortButtons {
+    width: 300px;
+  }
+
+  .starWarsBanner {
+    height: 50vh;
+  }
+
+  .descriptionWrap {
+    width: 100%;
+  }
+
+  .individualPost {
+    height: 60vh;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+
+  .individualPosts {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .addCart {
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
+
+  header .cartWrap #r2d2 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  header .logo #deathstar {
+    margin-left: 10px;
+  }
+
+  .r2d2shadow {
+    right: 14px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .individualPost {
+    width: 80%;
+  }
 }
