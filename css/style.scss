@@ -507,7 +507,7 @@ input {
 //        Webkits        //
 //////////////////////////
 
-@media screen and (max-width: 980px) {
+@media handheld, screen and (max-width: 980px) {
   header .cartWrap {
       transition: all .25s ease;
       -webkit-transition: all .25s ease;
@@ -515,7 +515,7 @@ input {
   }
 }
 
-@media screen and (max-width: 850px) {
+@media handheld, screen and (max-width: 850px) {
   header .cartWrap {
       transition: all .25s ease;
       -webkit-transition: all .25s ease;
@@ -535,7 +535,7 @@ input {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media handheld, screen and (max-width: 800px) {
 
   .individualPosts {
     width: 45%;
@@ -559,7 +559,7 @@ input {
 
 }
 
-@media screen and (max-width: 700px) {
+@media handheld, screen and (max-width: 700px) {
 
   .titleLogo {
     display: flex
@@ -631,7 +631,7 @@ input {
   }
 }
 
-@media screen and (max-width: 415px) {
+@media handheld, screen and (max-width: 415px) {
   .individualPost {
     width: 80%;
   }
