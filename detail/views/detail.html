@@ -9,25 +9,7 @@
   </div>
 </header>
 
-<div class="productWrap" ng-controller="MainController">
-  <div class="individualPost">
-    <div class="image">
-      <img ng-src={{product.img}} alt="" fallback-src>
-    </div>
-    <div class="bottom">
-      <div class="title"><h3>{{product.title}}</h3></div>
-      <div class="price"><span id="etsyLinkProd"><a href={{product.url}}>View on Etsy</a></span><p>Price: {{product.price | currency}}</p></div>
-    </div>
-  </div>
-  <div class="descriptionWrap">
-    <h1>Description</h1>
-    <div class="description">
-      <h2>{{product.descript}}</h2>
-      <div class="mats"><u><b>Materials</u></b></div>
-      <h2 ng-repeat='materials in product.materials'>{{materials}}</h2>
-    </div>
-    <div class="addCart" ng-controller="CartController" ng-click="addToCart(product)">
-      ADD TO CART YOUNG JEDI
-    </div>
-  </div>
+<div class="productWrap" ng-controller="DetailController as detailCtrl">
+  <detail-directive class="productWrap" p="product">
+  </detail-directive>
 </div>
