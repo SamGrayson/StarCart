@@ -1,41 +1,611 @@
-/*
-Error: Invalid CSS after "...ng-top: 100px;}": expected selector or at-rule, was "}"
-        on line 260 of style.scss
+* {
+  box-sizing: border-box;
+  transition: all .25s ease;
+  -webkit-transition: all .25s ease; }
 
-255:   overflow: auto;
-256:   overflow-y: hidden;
-257:   white-space: nowrap;
-258:   padding-bottom: 50px;
-259:   padding-top: 100px;}
-260: }
-261: 
-262: .individualPosts {
-263:   height: 320px;
-264:   width: 320px;
-265:   margin: 10px auto;
+html {
+  margin: 0;
+  padding: 0; }
 
-Backtrace:
-style.scss:260
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:1162:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:1098:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/scss/parser.rb:43:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/engine.rb:393:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/engine.rb:368:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/engine.rb:285:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.14/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...ng-top: 100px;}\": expected selector or at-rule, was \"}\"\A         on line 260 of style.scss\A \A 255:   overflow: auto;\A 256:   overflow-y: hidden;\A 257:   white-space: nowrap;\A 258:   padding-bottom: 50px;\A 259:   padding-top: 100px;}\A 260: }\A 261: \A 262: .individualPosts {\A 263:   height: 320px;\A 264:   width: 320px;\A 265:   margin: 10px auto;"; }
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 100%;
+  width: 100%; }
+
+p, h1, h2, h3, h4, h5, a {
+  margin: 0;
+  padding: 0; }
+
+.titleLogo {
+  position: relative;
+  height: 20vh;
+  width: 100vw;
+  z-index: 4;
+  display: none;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  background-color: white; }
+  .titleLogo #deathstarSmall {
+    height: 75px;
+    width: 75px; }
+  .titleLogo #starCartLogoSmall {
+    height: 75px;
+    width: 300px; }
+
+header {
+  height: 50px;
+  width: 100vw;
+  background-color: white;
+  border-bottom: 2px solid gray;
+  box-shadow: 1px 1px 10px 1px black;
+  position: fixed;
+  background-color: white;
+  z-index: 2; }
+  header .headerWrapper {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  header .logo {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 50px;
+    width: 50%;
+    float: left; }
+    header .logo #deathstar {
+      height: 40px;
+      width: 40px;
+      margin-left: 25px; }
+    header .logo #starCartLogo {
+      display: inline-block;
+      height: 40px;
+      width: 250px; }
+  header .sortButtons {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    height: 50px;
+    width: 500px;
+    margin: 0 auto; }
+    header .sortButtons .sort {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      font-style: italic;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      width: 75px;
+      height: 45px;
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+      transition: all .25s linear;
+      -webkit-transition: all .25s linear; }
+    header .sortButtons .sort:hover {
+      color: white;
+      background-color: lightgray;
+      cursor: pointer; }
+  header .cartWrap {
+    position: relative;
+    height: 50px;
+    width: 50%;
+    float: right; }
+    header .cartWrap .cart {
+      float: right;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      margin-top: 6px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row; }
+    header .cartWrap #r2d2 {
+      margin-left: 10px;
+      margin-right: 25px; }
+
+input {
+  width: 300px;
+  height: 25px;
+  padding-left: 10px; }
+
+.starWarsBanner {
+  height: 70vh;
+  width: 100vw;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("http://leakynews.s3.amazonaws.com/pub/wp-content/uploads/2012/10/star-wars-episode-4-advance-poster.jpg");
+  background-position: 50% 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 25px; }
+
+.listWrap {
+  height: 100%;
+  width: 95%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.cartListWrap {
+  height: 500px;
+  width: 95%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  overflow: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-bottom: 50px;
+  padding-top: 100px; }
+
+.individualPosts {
+  height: 320px;
+  width: 320px;
+  margin: 10px auto;
+  border: 2px solid lightgray; }
+  .individualPosts .image {
+    height: 70%;
+    width: 100%;
+    position: relative; }
+    .individualPosts .image img {
+      width: 100%;
+      height: 100%; }
+  .individualPosts .bottom {
+    height: 30%;
+    width: 100%;
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+    position: relative; }
+    .individualPosts .bottom .title {
+      height: 50%;
+      width: 100%;
+      overflow: hidden; }
+      .individualPosts .bottom .title h3 {
+        padding: 10px;
+        font-weight: 400; }
+    .individualPosts .bottom .price {
+      height: 50%;
+      width: 100%;
+      text-align: right; }
+      .individualPosts .bottom .price #etsyLink {
+        font-style: italic;
+        font-size: .7em;
+        float: left;
+        position: absolute;
+        bottom: 35px;
+        left: 10px;
+        color: #d9b80d; }
+      .individualPosts .bottom .price p {
+        padding: 10px;
+        font-weight: 300; }
+
+.productWrap {
+  height: 100%;
+  width: 95%;
+  margin: 0 auto;
+  padding-top: 12vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.individualPost {
+  height: 80vh;
+  width: 40%;
+  margin: 10px;
+  border: 2px solid lightgray; }
+  .individualPost .image {
+    height: 70%;
+    width: 100%; }
+    .individualPost .image img {
+      width: 100%;
+      height: 100%; }
+  .individualPost .bottom {
+    height: 30%;
+    width: 100%;
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+    position: relative; }
+    .individualPost .bottom .title {
+      height: 50%;
+      width: 100%;
+      overflow: hidden; }
+      .individualPost .bottom .title h3 {
+        padding: 10px;
+        font-weight: 400; }
+    .individualPost .bottom .price {
+      height: 50%;
+      width: 100%;
+      text-align: right; }
+      .individualPost .bottom .price #etsyLinkProd {
+        font-style: italic;
+        font-size: .7em;
+        float: left;
+        position: absolute;
+        bottom: 55px;
+        left: 10px;
+        color: #d9b80d; }
+      .individualPost .bottom .price p {
+        padding: 10px;
+        font-weight: 300; }
+
+.descriptionWrap {
+  height: 60vh;
+  float: right;
+  width: 55%;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-bottom: 50px;
+  margin-bottom: 100px;
+  font-family: 'Open Sans', sans-serif; }
+  .descriptionWrap h1 {
+    margin-bottom: 40px;
+    font-size: 4em;
+    font-weight: 300;
+    border-bottom: 2px solid lightgray; }
+
+.description {
+  height: 80%;
+  width: 100%;
+  padding-bottom: 35px;
+  font-family: 'Open Sans', sans-serif;
+  overflow: scroll; }
+  .description h2 {
+    font-weight: 400; }
+
+.mats {
+  margin-top: 25px;
+  margin-bottom: 15px; }
+
+.description::-webkit-scrollbar {
+  display: none; }
+
+.addCart {
+  width: 100%;
+  height: 20%;
+  margin-top: 25px;
+  background: linear-gradient(265deg, #0f8f2f, #0f8f2f);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 2em;
+  color: white;
+  transition: all .25s linear;
+  -webkit-transition: all .25s linear;
+  box-shadow: 0px 2px 10px 0px black; }
+
+.addCart:hover {
+  background: linear-gradient(265deg, rgba(15, 143, 47, 0.89), rgba(15, 143, 47, 0.6));
+  cursor: pointer; }
+
+#cartButton {
+  transition: all .25s linear;
+  -webkit-transition: all .25s linear;
+  color: black; }
+
+#cartButton:hover .r2d2shadow {
+  transition: all .25s linear;
+  -webkit-transition: all .25s linear;
+  box-shadow: 4px 5px 50px 4px #383D75;
+  cursor: pointer; }
+
+.r2d2shadow {
+  transition: all .25s linear;
+  -webkit-transition: all .25s linear;
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  margin: 0 auto;
+  background-color: black;
+  z-index: 3;
+  top: 20px;
+  right: 34px; }
+
+.priceTotal {
+  position: fixed;
+  bottom: 0;
+  height: 150px;
+  width: 100vw;
+  font-size: 3em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.fa-times {
+  transition: all .25s linear;
+  -webkit-transition: all .25s linear;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: rgba(255, 0, 0, 0.5); }
+
+.fa-times:hover {
+  transition: all .25s linear;
+  -webkit-transition: all .25s linear;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: red;
+  cursor: pointer; }
+
+@media handheld, screen and (max-width: 980px) {
+  header .cartWrap {
+    transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    width: 20%; } }
+@media handheld, screen and (max-width: 850px) {
+  header .cartWrap {
+    transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    width: 30%; }
+
+  header .logo #deathstar {
+    transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    height: 30px;
+    width: 30px; }
+
+  header .logo #starCartLogo {
+    transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    height: 30px;
+    width: 150px; } }
+@media handheld, screen and (max-width: 800px) {
+  .individualPosts {
+    width: 320px; }
+
+  .addCart {
+    font-size: 1.5em; }
+
+  .description h2 {
+    font-size: 1.0em; }
+
+  .individualPost {
+    height: 60vh; }
+
+  .individualPost .bottom .price #etsyLinkProd {
+    bottom: 35px; } }
+@media handheld, screen and (max-width: 700px) {
+  .titleLogo {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+
+  header .logo #deathstar {
+    transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    height: 50px;
+    width: 50px; }
+
+  header .logo {
+    width: 20%; }
+
+  header .logo #starCartLogo {
+    transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    height: 30px;
+    width: 150px;
+    display: none; }
+
+  input {
+    width: 200px; }
+
+  header .sortButtons {
+    width: 300px; }
+
+  .starWarsBanner {
+    height: 50vh; }
+
+  .descriptionWrap {
+    width: 100%; }
+
+  .individualPost {
+    height: 60vh;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 25px; }
+
+  .individualPosts {
+    width: 320px;
+    margin: 10px auto; }
+
+  .addCart {
+    margin-top: 10px;
+    margin-bottom: 25px; }
+
+  header .cartWrap #r2d2 {
+    margin-left: 10px;
+    margin-right: 10px; }
+
+  header .logo #deathstar {
+    margin-left: 10px; }
+
+  .r2d2shadow {
+    right: 14px; } }
+@media handheld, screen and (max-width: 480px) {
+  .individualPost {
+    width: 80%; } }
+@media handheld, screen and (max-width: 375px) {
+  .individualPosts {
+    width: 320px; }
+
+  header .cartWrap {
+    transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    width: 40%;
+    margin-right: 0px; }
+
+  .descriptionWrap h1 {
+    margin-bottom: 40px;
+    font-size: 3em; }
+
+  .addCart {
+    font-size: 1.2em; }
+
+  .titleLogo #starCartLogoSmall {
+    height: 50px;
+    width: 250px; }
+
+  .titleLogo #deathstarSmall {
+    height: 50px;
+    width: 50px; }
+
+  header .sortButtons .sort {
+    display: none; }
+
+  header .sortButtons {
+    width: 100px; }
+
+  .cartListWrap {
+    height: 85%;
+    width: 95%;
+    overflow: scroll;
+    padding-top: 80px; }
+
+  .cartListWrap::-webkit-scrollbar {
+    display: none; }
+
+  .cartListWrap .individualPosts {
+    width: 320px;
+    height: 320px;
+    margin: 0 10px; }
+
+  .individualPosts .bottom .price #etsyLink {
+    bottom: 22px; }
+
+  .priceTotal {
+    font-size: 2em;
+    background-color: white;
+    z-index: 2;
+    height: 100px; } }
+
+/*# sourceMappingURL=style.css.map */
