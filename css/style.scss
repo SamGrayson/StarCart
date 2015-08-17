@@ -16,7 +16,6 @@ body {
   position: relative;
   height: 100vh;
   width: 100vw;
-  min-width: 380px;
 }
 
 p, h1, h2, h3, h4, h5, a {
@@ -656,14 +655,8 @@ input {
 }
 
 @media handheld, screen and (max-width: 375px) {
-  .individualPost {
-    width: 90%;
-    height: 80vh;
-  }
-
   .individualPosts {
     width: 320px;
-    height: 80vh;
   }
 
     header .cartWrap {
@@ -712,8 +705,8 @@ input {
 
   .cartListWrap .individualPosts {
     width: 320px;
-    height: 60vh;
-    margin: 0 auto;
+    height: 320px;
+    margin: 0 10px;
   }
   .individualPosts .bottom .price #etsyLink {
     bottom: 22px;
