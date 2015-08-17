@@ -226,10 +226,7 @@ input {
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-wrap: wrap;-ms-flex-wrap: wrap;flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;-webkit-justify-content: flex-start;-ms-flex-pack: start;justify-content: flex-start;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
@@ -260,8 +257,8 @@ input {
 
 .individualPosts {
   height: 60vh;
-  width: 30%;
-  margin: 10px;
+  width: 320px;
+  margin: 10px auto;
   border: 2px solid lightgray;
   .image {
     height: 70%;
@@ -557,7 +554,7 @@ input {
 @media handheld, screen and (max-width: 800px) {
 
   .individualPosts {
-    width: 45%;
+    width: 320px;
   }
 
   .addCart {
@@ -627,7 +624,7 @@ input {
   }
 
   .individualPosts {
-    width: 90%;
+    width: 320px;
     margin: 10px auto;
   }
 
@@ -663,7 +660,7 @@ input {
   }
 
   .individualPosts {
-    width: 90%;
+    width: 320px;
     height: 80vh;
   }
 
@@ -712,7 +709,7 @@ input {
   }
 
   .cartListWrap .individualPosts {
-    width: 90%;
+    width: 320px;
     height: 60vh;
     margin: 0 auto;
   }
