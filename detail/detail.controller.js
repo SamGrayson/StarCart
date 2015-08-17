@@ -7,6 +7,6 @@
       DetailService.getProduct($routeParams.id).then(function(product){
         $scope.product = product
       })
-
+      
     });
 })();
