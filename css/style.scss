@@ -695,6 +695,25 @@ input {
     width: 100px;
   }
 
+  .carListWrap {
+    height: 500px;
+    width: 95%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;-webkit-box-direction: normal;-webkit-flex-direction: column;-ms-flex-direction: column;flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    overflow: scroll;
+    padding-bottom: 50px;
+    padding-top: 100px;
+  }
+
 
   .cartListWrap::-webkit-scrollbar {
    display: none;
