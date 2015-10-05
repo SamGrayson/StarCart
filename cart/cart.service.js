@@ -3,7 +3,7 @@
   angular
     .module('cart')
     .factory('CartService', function ($http, $rootScope) {
-      var url = 'http://samtinyserver.herokuapp.com/collections/starcart';
+      var url = 'https://samtinyserver.herokuapp.com/collections/starcart';
 
       var addToCart = function (product) {
       $http.post(url, product).success(function (resp) {
