@@ -14,7 +14,7 @@
 
       var linkObj = {
         baseUrl: 'https://openapi.etsy.com/v2/listings/active.js?includes=MainImage&',
-        apiKey: 'wz6v1ulvml3oxvjg6cohrntb',
+        apiKey: '',
         keyword: 'Star%20Wars'
       }
 
